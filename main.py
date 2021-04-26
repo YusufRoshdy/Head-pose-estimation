@@ -76,7 +76,6 @@ while(True):
 
         # determine the facial landmarks for the face region, then
         shape = predictor(gray, rect)
-        print(type(shape))
         # convert the facial landmark (x, y)-coordinates to a NumPy array
         shape = shape_to_np(shape)
     
