@@ -1,8 +1,9 @@
-FROM python:3
+FROM digi0ps/python-opencv-dlib
 
-ADD main.py /
-ADD requirements.txt /
+RUN pip install -U pip wheel cmake
+RUN pip install opencv-python dlib
 
-RUN pip install -r requirements.txt
+WORKDIR /app
+COPY . /app
 
-CMD [ "python", "./main.py" ]
+CMD [ "python", "main.py" ]
